@@ -16,12 +16,11 @@ const teacherschema=new mongoose.Schema({
 const stu =mongoose.model('student',studentschema)
 const tea =mongoose.model('teacher',teacherschema)
 
-
 const createDoc=async ()=>{
     try{
         const stuDoc=new stu({
             name:'sakib',
-            age:10
+            age:22
          })
          
          const res=await stuDoc.save()
@@ -39,4 +38,4 @@ const getAll=async ()=>{
 }
 
  
-export default createDoc 
+export {getAll,createDoc}
