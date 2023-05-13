@@ -37,5 +37,10 @@ const getAll=async ()=>{
     console.log(result)
 }
 
+const getspecificfield=async ()=>{
+    const result=await stu.find().select('name')
+    console.log(result)
+}
+
  
-export {getAll,createDoc}
+export {getAll,createDoc,getspecificfield}
