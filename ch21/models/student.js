@@ -1,3 +1,8 @@
+ 
+
+
+
+
 import mongoose  from "mongoose";
 
 
@@ -32,20 +37,15 @@ const createDoc=async ()=>{
     }
 }
 
-const getAll=async ()=>{
-    const result=await stu.find()
-    console.log(result)
-}
-
-const getspecificfield=async ()=>{
-    const result=await stu.find().select('name')
-    console.log(result)
-}
-
  
-export {getAll,createDoc,getspecificfield}
+const updatebyId=async (id)=>{
+    try{
+        const result=await stu.findById(id,{name:"arif"})
+        console.log(result)
+    }
+    catch(er){
+     console.log('err')
+    }
+}
 
-
-
-
-
+export {updatebyId}
